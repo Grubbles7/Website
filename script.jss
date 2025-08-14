@@ -6,3 +6,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       .scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// Scroll Reveal Effect
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const elementVisible = 100; // Trigger point
+
+    if (elementTop < windowHeight - elementVisible) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll(); // Run on page load
