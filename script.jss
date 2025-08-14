@@ -23,3 +23,4 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll(); // Run on page load
+
